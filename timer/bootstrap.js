@@ -36,7 +36,14 @@ Ext.Loader.addClassPathMappings({
 });
 
 Ext.ClassManager.addNameAlternateMappings({
+  "ArsnovaTimer.controller.Timer": [],
+  "ArsnovaTimer.controller.TimerButton": [],
+  "ArsnovaTimer.model.Time": [],
+  "ArsnovaTimer.store.Times": [],
+  "ArsnovaTimer.view.Home": [],
   "ArsnovaTimer.view.Main": [],
+  "ArsnovaTimer.view.Timer": [],
+  "ArsnovaTimer.view.TimerContainer": [],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
   "Ext.AbstractPlugin": [],
@@ -533,17 +540,6 @@ Ext.ClassManager.addNameAlternateMappings({
   "Ext.layout.wrapper.BoxDock": [],
   "Ext.layout.wrapper.Dock": [],
   "Ext.layout.wrapper.Inner": [],
-  "Ext.log.Base": [],
-  "Ext.log.Logger": [],
-  "Ext.log.filter.Filter": [],
-  "Ext.log.filter.Priority": [],
-  "Ext.log.formatter.Default": [],
-  "Ext.log.formatter.Formatter": [],
-  "Ext.log.formatter.Identity": [],
-  "Ext.log.writer.Console": [],
-  "Ext.log.writer.DocumentTitle": [],
-  "Ext.log.writer.Remote": [],
-  "Ext.log.writer.Writer": [],
   "Ext.mixin.Bindable": [],
   "Ext.mixin.Filterable": [],
   "Ext.mixin.Mixin": [],
@@ -671,8 +667,21 @@ Ext.ClassManager.addNameAlternateMappings({
 });
 
 Ext.ClassManager.addNameAliasMappings({
+  "ArsnovaTimer.controller.Timer": [],
+  "ArsnovaTimer.controller.TimerButton": [],
+  "ArsnovaTimer.model.Time": [],
+  "ArsnovaTimer.store.Times": [],
+  "ArsnovaTimer.view.Home": [
+    "widget.home"
+  ],
   "ArsnovaTimer.view.Main": [
     "widget.main"
+  ],
+  "ArsnovaTimer.view.Timer": [
+    "widget.timer"
+  ],
+  "ArsnovaTimer.view.TimerContainer": [
+    "widget.timerContainer"
   ],
   "Ext.AbstractComponent": [],
   "Ext.AbstractManager": [],
@@ -1251,17 +1260,6 @@ Ext.ClassManager.addNameAliasMappings({
   "Ext.layout.wrapper.BoxDock": [],
   "Ext.layout.wrapper.Dock": [],
   "Ext.layout.wrapper.Inner": [],
-  "Ext.log.Base": [],
-  "Ext.log.Logger": [],
-  "Ext.log.filter.Filter": [],
-  "Ext.log.filter.Priority": [],
-  "Ext.log.formatter.Default": [],
-  "Ext.log.formatter.Formatter": [],
-  "Ext.log.formatter.Identity": [],
-  "Ext.log.writer.Console": [],
-  "Ext.log.writer.DocumentTitle": [],
-  "Ext.log.writer.Remote": [],
-  "Ext.log.writer.Writer": [],
   "Ext.mixin.Bindable": [],
   "Ext.mixin.Filterable": [],
   "Ext.mixin.Mixin": [],
