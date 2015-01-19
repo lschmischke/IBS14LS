@@ -45,11 +45,9 @@ Ext.define("ArsnovaTimer.controller.Timer",{
             var elapsedTime;
             var seconds = clock / 1000;
             var minutes = Math.floor(seconds / 60);
-            var hours   = Math.floor(minutes / 60);
             seconds     = Math.floor(seconds % 60);
             var milliseconds = clock % 1000;
  
-            //Display without hours
              elapsedTime  = (minutes  < 10) ?  "0" + minutes  : minutes;
              elapsedTime += (seconds  < 10) ? ":0" + seconds  : ":" + seconds;
              if(milliseconds < 10){

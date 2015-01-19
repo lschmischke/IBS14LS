@@ -13,7 +13,7 @@ Ext.define('ArsnovaTimer.view.Home', {
 
         html: ['<h1> Timer for Arsnova</h1>',
                 '<hr>',
-        '<p> press <a href="../index.html">here</a> to get back to the Homepage </p>'].join(""),
+        '<p> Press <a href="../index.html">here</a> to get back to the Homepage! </p>'].join(""),
         items: [
             {
                 xtype: 'titlebar',

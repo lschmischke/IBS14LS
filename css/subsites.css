@@ -14,8 +14,33 @@
 	color: white;
 }
 
-
 .header {
 	background-color: rgba(0,0,0,0.6); 
 }
+
+.liste {
+	text-align:left;
+}
+
+.inputliste {
+	clear:both;
+	text-align:center;
+}
+
+.inputliste p {
+	text-align:left;
+}
+
+.highlighted {
+    -webkit-box-shadow: 0 0 8px #FF0000;
+    -moz-box-shadow: 0 0 8px #FF0000;
+    box-shadow: 0 0 8px #FF0000;
+    cursor:pointer;
+}
+
+#w3c {
+	padding-top:10px;
+}
+
+
 	
