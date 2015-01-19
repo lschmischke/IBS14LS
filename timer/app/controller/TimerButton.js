@@ -11,19 +11,19 @@ Ext.define('ArsnovaTimer.controller.TimerButton', {
             'button[action=timerButton]':{
             	tap:function(button){
             		if (button.getText()=== "Start") {
-            			ArsnovaTimer.app.getController("StopWatch").controlTimer("Start");
+            			ArsnovaTimer.app.getController("Timer").controlTimer("Start");
             			button.setText("Pause");
             		}
             		else {
             			button.setText("Start");
-            			ArsnovaTimer.app.getController("StopWatch").controlTimer("Stop");
+            			ArsnovaTimer.app.getController("Timer").controlTimer("Stop");
             		}
             	}
             },
             'button[action=resetButton]': {
             	tap:function(button){
             		this.getStartBtn().setText("Start");
-            		ArsnovaTimer.app.getController("StopWatch").controlTimer("Reset");
+            		ArsnovaTimer.app.getController("Timer").controlTimer("Reset");
             	}
             },
             'button[action=setTime]':{
@@ -34,7 +34,7 @@ Ext.define('ArsnovaTimer.controller.TimerButton', {
      	                slots: [
      	                    {
      	                    	name:'setTime',
-     	                    	title:' How long and shit',
+     	                    	title:' How long',
      	                    	store: 'Times',
      	                    	value: 10,
      	                    	align: 'center',
@@ -43,7 +43,7 @@ Ext.define('ArsnovaTimer.controller.TimerButton', {
      	                  listeners: {
      	                     change: function(picker, value, eOpts) {
      	                         button.setText("Time: "+value.setTime+" Minute(s)");
-     	                         ArsnovaTimer.app.getController("StopWatch").controlTimer("Set",value.setTime);
+     	                         ArsnovaTimer.app.getController("Timer").controlTimer("Set",value.setTime);
      	                         startBtn.setText("Start");
      	                     }
      	                 }

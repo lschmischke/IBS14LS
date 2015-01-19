@@ -17,7 +17,7 @@ Ext.application({
         'Ext.MessageBox'
     ],
 
-    controllers: [ 'TimerButton','StopWatch'],
+    controllers: [ 'TimerButton','Timer'],
     models:['Time'],
     views: [
         'Main',

@@ -2,15 +2,15 @@ var minutes=10;
 var clock = minutes * 60 * 1000;
 var start = clock;
  
-Ext.define("ArsnovaTimer.controller.StopWatch",{
+Ext.define("ArsnovaTimer.controller.Timer",{
     extend: 'Ext.app.Controller',
  
     config: {
         statics: {
-            stopWatchInt: undefined
+            timerInt: undefined
         },
         refs: {
-            stopWatchPanel : '#Timer',
+            timerPanel : '#Timer',
             startBtn: 'button#startButton',
             buzzer: 'audio#buzzer',
         },
@@ -32,8 +32,8 @@ Ext.define("ArsnovaTimer.controller.StopWatch",{
         
         function underZero(watchObj) {
         	if(clock<0) {
-        		clearInterval(stopWatchInt);
-                stopWatchInt = undefined;
+        		clearInterval(timerInt);
+                timerInt = undefined;
                 watchObj.setHtml("00:00:00 min");
                 startBtn.setText("Start");
                 clock=start;
@@ -79,33 +79,33 @@ Ext.define("ArsnovaTimer.controller.StopWatch",{
         case "Start":
             var thisScope = this;
             offset = Date.now();
-            if ( self.stopWatchInt != undefined ) { clearInterval(self.stopWatchInt); }
-            stopWatchInt = setInterval(function() {
-                update(thisScope.getStopWatchPanel());
+            if ( self.timerInt != undefined ) { clearInterval(self.timerInt); }
+            timerInt = setInterval(function() {
+                update(thisScope.getTimerPanel());
             }, 1);
  
             break;
         case "Stop":
-            clearInterval(stopWatchInt);
-            stopWatchInt = undefined;
+            clearInterval(timerInt);
+            timerInt = undefined;
             break;
         case "Reset":
             clock = start;
-            if(stopWatchInt!=undefined) {
-            	clearInterval(stopWatchInt);
-            	stopWatchInt = undefined;
+            if(timerInt!=undefined) {
+            	clearInterval(timerInt);
+            	timerInt = undefined;
             	var mindisplay = (minutes <10) ? "0"+minutes : minutes;
-            	this.getStopWatchPanel().setHtml(mindisplay+":00:000 min");
+            	this.getTimerPanel().setHtml(mindisplay+":00:000 min");
             }
             break;
         case "Set":
-        	clearInterval(stopWatchInt);
-            stopWatchInt = undefined;
+        	clearInterval(timerInt);
+            timerInt = undefined;
         	minutes=min;
         	start=minutes*60*1000;	
         	clock=start;
         	var mindisplay = (minutes <10) ? "0"+minutes : minutes;
-            this.getStopWatchPanel().setHtml(mindisplay+":00:000 min");
+            this.getTimerPanel().setHtml(mindisplay+":00:000 min");
         }
     }
  
