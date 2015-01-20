@@ -11,8 +11,12 @@ Ext.define('ArsnovaTimer.view.Main', {
         items: [
             {
                 xtype:'home',
-            }, {
+            }, 
+            {
                 xtype:'timerContainer',
+            },
+            {
+            	xtype: 'impressum',
             }
              
         ]

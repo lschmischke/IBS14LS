@@ -41,6 +41,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "ArsnovaTimer.model.Time": [],
   "ArsnovaTimer.store.Times": [],
   "ArsnovaTimer.view.Home": [],
+  "ArsnovaTimer.view.Impressum": [],
   "ArsnovaTimer.view.Main": [],
   "ArsnovaTimer.view.Timer": [],
   "ArsnovaTimer.view.TimerContainer": [],
@@ -673,6 +674,9 @@ Ext.ClassManager.addNameAliasMappings({
   "ArsnovaTimer.store.Times": [],
   "ArsnovaTimer.view.Home": [
     "widget.home"
+  ],
+  "ArsnovaTimer.view.Impressum": [
+    "widget.impressum"
   ],
   "ArsnovaTimer.view.Main": [
     "widget.main"

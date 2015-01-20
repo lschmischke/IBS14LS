@@ -24,6 +24,7 @@ Ext.application({
         'Home',
         'TimerContainer',
         'Timer',
+        'Impressum',
     ],
     stores: ['Times'],
     
