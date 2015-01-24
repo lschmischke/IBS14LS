@@ -14,7 +14,9 @@ $(document).ready(function() {
 				  var win = window.open(url, '_blank');
 				  win.focus();
 				};
-			OpenInNewTab("http://de.wikipedia.org/wiki/Spezial:Suche?search="+item+"&go=Artikel")
+			var url ="http://de.wikipedia.org/wiki/Spezial:Suche?search="+item+"&go=Artikel";
+			OpenInNewTab(url);
+			addToList(url,item);
 		}
 	});
 	$("#volltext").click(function() {
@@ -31,7 +33,9 @@ $(document).ready(function() {
 				  var win = window.open(url, '_blank');
 				  win.focus();
 				};
-			OpenInNewTab("http://de.wikipedia.org/wiki/Spezial:Suche?search="+item+"&fulltext=Volltext")
+			var url = "http://de.wikipedia.org/wiki/Spezial:Suche?search="+item+"&fulltext=Volltext";
+			OpenInNewTab(url);
+			addToList(url,item);
 		}
 	});
 	
@@ -53,4 +57,8 @@ $(document).ready(function() {
 	$(document).on('click','.item',function() {
 		$(this).remove();
 	})
+	
+	function addToList(url,item) {
+		$('.liste').append("<li class=\"item\">	<a href=\""+url+"\">"+item+"</a>	</li>");
+	}
 })
