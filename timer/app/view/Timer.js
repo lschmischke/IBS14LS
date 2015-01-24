@@ -31,6 +31,7 @@ Ext.define('ArsnovaTimer.view.Timer', {
 	        },
 	        {
 	        	xtype:'audio',
+	        	type: 'mpeg',
 	        	hidden:true,
 	        	url:'../../ArsnovaTimer/resources/WrongAnswerBuzzer.mp3',
 	        	itemId:'buzzer',

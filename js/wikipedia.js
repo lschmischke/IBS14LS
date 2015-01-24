@@ -1,6 +1,6 @@
 $(document).ready(function() {
-	var max_zeichen=30;
-	$(".button").click(function() {
+	var max_zeichen=90;
+	$("#artikel").click(function() {
 		var item =$('#wiki').val();
 		if(item==="") {
 			$('#wiki').addClass('highlighted');
@@ -17,6 +17,24 @@ $(document).ready(function() {
 			OpenInNewTab("http://de.wikipedia.org/wiki/Spezial:Suche?search="+item+"&go=Artikel")
 		}
 	});
+	$("#volltext").click(function() {
+		var item =$('#wiki').val();
+		if(item==="") {
+			$('#wiki').addClass('highlighted');
+			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">Keine leere Suche erlaubt!");
+		}
+		else if(item.length>max_zeichen) {
+			$('#wiki').addClass('highlighted');
+		}
+		else{
+			function OpenInNewTab(url) {
+				  var win = window.open(url, '_blank');
+				  win.focus();
+				};
+			OpenInNewTab("http://de.wikipedia.org/wiki/Spezial:Suche?search="+item+"&fulltext=Volltext")
+		}
+	});
+	
 	$('#wiki').on('input',function() {
 		var val = max_zeichen-$('#wiki').val().length;
 		if(val<0) {
