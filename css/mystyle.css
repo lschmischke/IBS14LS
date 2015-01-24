@@ -1,10 +1,13 @@
+html {
+	font-family: 'Cabin', sans-serif;
+}
 
 a{
 	text-decoration: none;
 }
 
 .body {
-	font-family: sans-serif;
+	font-family: 'Cabin', sans-serif;
 }
 
 /* =================== HEADER ====================*/
@@ -23,7 +26,6 @@ a{
 }
 .welcome {
 	text-align: left;
-	font-family: sans-serif;
 	display:inline;
 	float: left;
 	color: white;
@@ -31,7 +33,7 @@ a{
 }
 
 .welcome h3 {
-	font-family: sans-serif;
+	
 	color: darkgrey;
 	margin-top:-5px;
 }
@@ -51,7 +53,6 @@ h1 {
 	padding-top:10px;
 }
 .nav li{
-	font-family: sans-serif;
 	text-transform: uppercase;
 	font-weight:700;
 	list-style-type: none;
@@ -92,7 +93,6 @@ h1 {
 
 /* =================== CONTENT ====================*/
 .content{
-	font-family: 'OpenSans', sans-serif;
 	text-align: center;
 }
 
@@ -130,7 +130,7 @@ h1 {
 
 .content .row .col-md-2 h2 {
 	font-size:28px;
-	display:	block;
+	display:block;
 	margin-top:-10px;
 }
 
