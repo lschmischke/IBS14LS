@@ -32,7 +32,7 @@ Ext.define("ArsnovaTimer.controller.Timer",{
         	if(clock<0) {
         		clearInterval(timerInt);
                 timerInt = undefined;
-                panel.setHtml("00:00:00 min");
+                panel.setHtml("00:00 min");
                 startBtn.setText("Start");
                 clock=start;
                 buzzer.toggle();
@@ -45,20 +45,9 @@ Ext.define("ArsnovaTimer.controller.Timer",{
             var seconds = clock / 1000;
             var minutes = Math.floor(seconds / 60);
             seconds     = Math.floor(seconds % 60);
-            var milliseconds = clock % 1000;
  
              rest  = (minutes  < 10) ?  "0" + minutes  : minutes;
              rest += (seconds  < 10) ? ":0" + seconds  : ":" + seconds;
-             if(milliseconds < 10){
-                rest += ":00" + milliseconds;
-             }
-             else if(milliseconds < 100) {
-                rest += ":0" + milliseconds;
-             }
-             else
-             {
-                rest += ":" + milliseconds;
-             }
              rest += " min";
  
             panel.setHtml(rest);
@@ -91,7 +80,7 @@ Ext.define("ArsnovaTimer.controller.Timer",{
         		timerInt = undefined;
         	}
         	var mindisplay = (minutes <10) ? "0"+minutes : minutes;
-        	this.getTimerPanel().setHtml(mindisplay+":00:000 min");
+        	this.getTimerPanel().setHtml(mindisplay+":00 min");
         };
         if(cmd==="Set") {
         	if(self.timerInt!=undefined) {
@@ -102,7 +91,7 @@ Ext.define("ArsnovaTimer.controller.Timer",{
         	start=minutes*60*1000;	
         	clock=start;
         	var mindisplay = (minutes <10) ? "0"+minutes : minutes;
-        	this.getTimerPanel().setHtml(mindisplay+":00:000 min");
+        	this.getTimerPanel().setHtml(mindisplay+":00 min");
         };
         
         } //countdown

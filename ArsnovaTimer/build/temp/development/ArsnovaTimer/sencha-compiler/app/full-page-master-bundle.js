@@ -1,2 +1,2 @@
 // @tag full-page
-// @require C:\Users\kisef_000\wamp\www\ArsnovaTimer\app.js
+// @require C:\users\kisef_000\wamp\www\ibs14ls\arsnovatimer\app.js

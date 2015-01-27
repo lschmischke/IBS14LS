@@ -72,7 +72,7 @@
      */
     "css": [
         {
-            "path": "resources/css/mountainview.css",
+            "path": "resources/css/app.css",
             "update": "delta"
         }
     ],

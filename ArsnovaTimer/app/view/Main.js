@@ -3,7 +3,6 @@ Ext.define('ArsnovaTimer.view.Main', {
     xtype: 'main',
     requires: [
         'Ext.TitleBar',
-        'Ext.Video'
     ],
     config: {
         tabBarPosition: 'bottom',

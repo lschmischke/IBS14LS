@@ -4,7 +4,7 @@ $(document).ready(function() {
 		var item =$('#wiki').val();
 		if(item==="") {
 			$('#wiki').addClass('highlighted');
-			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">No empty searches allowed.!</p>");
+			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">No empty searches allowed!</p>");
 		}
 		else if(item.length>max_zeichen) {
 			$('#wiki').addClass('highlighted');
@@ -23,7 +23,9 @@ $(document).ready(function() {
 		var item =$('#wiki').val();
 		if(item==="") {
 			$('#wiki').addClass('highlighted');
-			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">No empty searches allowed.!</p>");
+			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">No empty searches allowed!</p>");
+			$('#volltext').removeClass('btn-default');
+			$('#volltext').addClass('btn-danger');
 		}
 		else if(item.length>max_zeichen) {
 			$('#wiki').addClass('highlighted');
@@ -40,14 +42,26 @@ $(document).ready(function() {
 		if(val<0) {
 			$('#wiki').addClass('highlighted');
 			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">Number of signs exceed the limit by "+(val*-1)+ " signs.</p>");
+			$('#volltext').removeClass('btn-default');
+			$('#volltext').addClass('btn-danger');
+			$('#artikel').removeClass('btn-default');
+			$('#artikel').addClass('btn-danger');
 		}
 		else if (val === max_zeichen) {
 			$('#wiki').addClass('highlighted');
-			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">No empty searches allowed.!</p>");		
+			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">No empty searches allowed.!</p>");	
+			$('#volltext').removeClass('btn-default');
+			$('#volltext').addClass('btn-danger');
+			$('#artikel').removeClass('btn-default');
+			$('#artikel').addClass('btn-danger');
 		}
 		else {
 			$('#wiki').removeClass('highlighted');
 			$('.checkInput').replaceWith("<p class=\"checkInput\">Signs left: "+val+"</p>");
+			$('#volltext').removeClass('btn-danger');
+			$('#artikel').removeClass('btn-danger');
+			$('#volltext').addClass('btn-default');
+			$('#artikel').addClass('btn-default');
 		}
 	});
 	$(document).on('click','.x',function() {
