@@ -6,24 +6,33 @@ Ext.define('ArsnovaTimer.controller.TimerButton', {
             startBtn : 'button#startButton',
             timerView : 'timerContainer',
             setTimeBtn: 'button#setTimeButton',
+            spinner: 'spinnerfield#spinner',
         },
         control: {
             'button[action=timerButton]':{
             	tap:function(button){
             		if (button.getText()=== "Start") {
-            			ArsnovaTimer.app.getController("Timer").countdown("Start");
+            			var min = this.getSpinner().getValue();
+            			this.getSpinner().disable();
+            			ArsnovaTimer.app.getController("Timer").countdown("Start",min);
+            			button.setText("Pause");
+            		}
+            		else if (button.getText()==="Resume") {
+            			ArsnovaTimer.app.getController("Timer").countdown("Resume");
             			button.setText("Pause");
             		}
             		else {
-            			button.setText("Start");
+            			button.setText("Resume");
             			ArsnovaTimer.app.getController("Timer").countdown("Stop");
             		}
             	}
             },
             'button[action=resetButton]': {
             	tap:function(button){
+            		var min = this.getSpinner().getValue();
+            		this.getSpinner().enable();
             		this.getStartBtn().setText("Start");
-            		ArsnovaTimer.app.getController("Timer").countdown("Reset");
+            		ArsnovaTimer.app.getController("Timer").countdown("Reset",min);
             	}
             },
             'button[action=setTime]':{

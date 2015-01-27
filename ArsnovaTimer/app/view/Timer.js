@@ -13,7 +13,7 @@ Ext.define('ArsnovaTimer.view.Timer', {
     	layout: {
     		type: 'vbox',
     		align: 'center',
-    		pack: 'center'
+    		pack: 'top'
     	},
     	
     	items: [
@@ -23,16 +23,29 @@ Ext.define('ArsnovaTimer.view.Timer', {
     	        		docked:'top',
     	        	},
     	        	items: [ 
-    	        	        {	
-    	        	        	xtype:'button',
-    	        	        	text:'Time: 10 Minute(s)',
+//    	        	        {	
+//    	        	        	xtype:'button',
+//    	        	        	text:'Time: 10 Minute(s)',
+//    	        	        	textAlign: 'center',
+//    	        	        	docked:'top',
+//    	        	        	action: 'setTime',
+//    	        	        	itemId: 'setTimeButton',
+//    	        	        },
+    	        	        {
+    	        	        	xtype:'spinnerfield',
+    	        	        	itemId: 'spinner',
+    	        	        	label: 'Countdown ab (in Minuten)',
     	        	        	docked:'top',
-    	        	        	action: 'setTime',
-    	        	        	itemId: 'setTimeButton',
+    	        	        	defaultValue: 10,
+    	        	        	minValue: 1,
+    	        	        	maxValue: 20,
+    	        	        	stepValue:1,
+    	        	        	
     	        	        },
     	        	        {
     	        	        	xtype: 'button',
     	        	        	text: 'Start',
+    	        	        	textAlign:'center',
     	        	        	docked:'top',
     	        	        	action :'timerButton',
     	        	        	itemId:'startButton',
@@ -40,6 +53,7 @@ Ext.define('ArsnovaTimer.view.Timer', {
     	        	        {
     	        	        	xtype:'button',
     	        	        	text: 'Reset',
+    	        	        	textAlign:'center',
     	        	        	action: 'resetButton',
     	        	        	docked: 'top',
     	        	        },

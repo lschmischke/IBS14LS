@@ -13,6 +13,7 @@ Ext.define("ArsnovaTimer.controller.Timer",{
             timerPanel : '#Timer',
             startBtn: 'button#startButton',
             buzzer: 'audio#buzzer',
+            spinner: 'spinnerfield#spinner',
         },
     },
     
@@ -32,7 +33,7 @@ Ext.define("ArsnovaTimer.controller.Timer",{
         	if(clock<0) {
         		clearInterval(timerInt);
                 timerInt = undefined;
-                panel.setHtml("00:00 min");
+                panel.setHtml("00:00");
                 startBtn.setText("Start");
                 clock=start;
                 buzzer.toggle();
@@ -48,7 +49,6 @@ Ext.define("ArsnovaTimer.controller.Timer",{
  
              rest  = (minutes  < 10) ?  "0" + minutes  : minutes;
              rest += (seconds  < 10) ? ":0" + seconds  : ":" + seconds;
-             rest += " min";
  
             panel.setHtml(rest);
         }
@@ -61,26 +61,28 @@ Ext.define("ArsnovaTimer.controller.Timer",{
             return d;
         }
  
-        if(cmd==="Start") {
+        if(cmd==="Resume") {
         	var thisTimer = this;
         	offset = Date.now();
         	if ( self.timerInt != undefined ) { clearInterval(self.timerInt); }
         	timerInt = setInterval(function() {
         		update(thisTimer.getTimerPanel());
-        	}, 1);
+        	}, 100);
         };
         if(cmd==="Stop"){
         	clearInterval(timerInt);
         	timerInt = undefined;
         };
         if(cmd==="Reset") {
+        	minutes=min;
+        	start=minutes*60*1000;
         	clock = start;
         	if(self.timerInt!=undefined) {
         		clearInterval(timerInt);
         		timerInt = undefined;
         	}
         	var mindisplay = (minutes <10) ? "0"+minutes : minutes;
-        	this.getTimerPanel().setHtml(mindisplay+":00 min");
+        	this.getTimerPanel().setHtml(mindisplay+":00");
         };
         if(cmd==="Set") {
         	if(self.timerInt!=undefined) {
@@ -91,8 +93,18 @@ Ext.define("ArsnovaTimer.controller.Timer",{
         	start=minutes*60*1000;	
         	clock=start;
         	var mindisplay = (minutes <10) ? "0"+minutes : minutes;
-        	this.getTimerPanel().setHtml(mindisplay+":00 min");
+        	this.getTimerPanel().setHtml(mindisplay+":00");
         };
+        if(cmd=="Start") {
+        	if(self.timerInt!=undefined) {
+        		clearInterval(timerInt);
+        		timerInt = undefined;
+        	}
+        	minutes=min;
+        	start=minutes*60*1000;	
+        	clock=start;
+        	ArsnovaTimer.app.getController("Timer").countdown("Resume",min);
+        }
         
         } //countdown
  

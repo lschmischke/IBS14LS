@@ -49,7 +49,7 @@ $(document).ready(function() {
 		}
 		else if (val === max_zeichen) {
 			$('#wiki').addClass('highlighted');
-			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">No empty searches allowed.!</p>");	
+			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">No empty searches allowed!</p>");	
 			$('#volltext').removeClass('btn-default');
 			$('#volltext').addClass('btn-danger');
 			$('#artikel').removeClass('btn-default');

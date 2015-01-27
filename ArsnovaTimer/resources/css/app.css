@@ -1,3 +1,5 @@
+
+
 html, body {
 	position: relative;
 	width: 100%;
@@ -560,7 +562,6 @@ to {
 	-ms-flex-align: center;
 	align-items: center;
 	background-color: #eee;
-	border: 1px solid #ccc;
 	position: relative;
 	overflow: hidden;
 	z-index: 1
@@ -1534,11 +1535,9 @@ keyframes progressIndicator {
 }
 
 .x-toolbar.x-docked-top {
-	border-bottom: 1px solid
 }
 
 .x-toolbar.x-docked-bottom {
-	border-top: 1px solid
 }
 
 .x-toolbar.x-docked-left {
@@ -1556,7 +1555,6 @@ keyframes progressIndicator {
 .x-title {
 	font-size: 1.2em;
 	text-align: center;
-	font-weight: bold;
 	max-width: 100%
 }
 
@@ -2055,7 +2053,6 @@ keyframes progressIndicator {
 }
 
 .x-form-label span {
-	font-weight: bold
 }
 
 .x-form-label-nowrap .x-form-label {
@@ -3248,19 +3245,20 @@ body.x-desktop {
 }
 
 .x-layout-card-item {
-	background: #eee
+	background: #e0e0e0;
 }
 
 .x-button {
 	-webkit-background-clip: padding;
 	-moz-background-clip: padding;
 	background-clip: padding-box;
-	-webkit-border-radius: 0.4em;
-	-moz-border-radius: 0.4em;
-	-ms-border-radius: 0.4em;
-	-o-border-radius: 0.4em;
+	-webkit-border-radius-top: 0.4em;
+	-moz-border-radius-top: 0.4em;
+	-ms-border-radius-top: 0.4em;
+	-o-border-radius-top: 0.4em;
 	min-height: 1.8em;
-	padding: .3em .6em
+	padding: .3em .6em;
+	margin-bottom:0.2em;
 }
 
 .x-button, .x-toolbar .x-button {
@@ -3280,7 +3278,7 @@ body.x-desktop {
 	background-image: none;
 	background-color: white;
 	width:720px;
-	text-align: 'center';
+	text-align: center;
 }
 
 .x-button.x-button-pressing, .x-button.x-button-pressing:after,
@@ -4198,17 +4196,7 @@ body.x-desktop {
 
 .x-sheet, .x-picker, .x-sheet-action {
 	padding: 0.7em;
-	border-top: 1px solid #092e47;
 	background-image: none;
-	background-color: rgba(3, 17, 26, 0.9);
-	background-image: -webkit-linear-gradient(top, rgba(11, 60, 94, 0.9),
-		rgba(6, 31, 49, 0.9) 3%, rgba(0, 2, 3, 0.9));
-	background-image: -moz-linear-gradient(top, rgba(11, 60, 94, 0.9),
-		rgba(6, 31, 49, 0.9) 3%, rgba(0, 2, 3, 0.9));
-	background-image: -o-linear-gradient(top, rgba(11, 60, 94, 0.9),
-		rgba(6, 31, 49, 0.9) 3%, rgba(0, 2, 3, 0.9));
-	background-image: -ms-linear-gradient(top, rgba(11, 60, 94, 0.9),
-		rgba(6, 31, 49, 0.9) 3%, rgba(0, 2, 3, 0.9));
 	-webkit-border-radius: 0;
 	-moz-border-radius: 0;
 	-ms-border-radius: 0;
@@ -4932,15 +4920,14 @@ body.x-desktop {
 }
 
 .x-form-label {
-	color: #333;
-	text-shadow: rgba(255, 255, 255, 0.25) 0 0.08em 0;
+	color: #4A5C66;
 	padding: 0.6em;
-	background-color: #f7f7f7;
-	color: #080808
+	background-color: #fff;
+	font-family: "Helvetica Neue", HelveticaNeue, "Helvetica-Neue", Helvetica, "BBAlpha Sans", sans-serif;
 }
 
 .x-form-label span {
-	font-size: .8em
+	font-size: .8em;
 }
 
 .x-form-fieldset {
@@ -5002,9 +4989,9 @@ body.x-desktop {
 }
 
 .x-label-align-left:first-child .x-form-label {
-	-moz-border-radius-topleft: 0.4em;
-	-webkit-border-top-left-radius: 0.4em;
-	border-top-left-radius: 0.4em
+	-moz-border-radius-topleft: 0.8em;
+	-webkit-border-top-left-radius: 0.8em;
+	border-top-left-radius: 0.8em
 }
 
 .x-label-align-left:last-child .x-form-label {
@@ -5703,17 +5690,14 @@ body.x-desktop {
 	background-color: #fff;
 	overflow: hidden;
 	margin: 0.7em;
-	-webkit-border-radius: 0.4em;
+	/* -webkit-border-radius: 0.4em;
 	-moz-border-radius: 0.4em;
 	-ms-border-radius: 0.4em;
 	-o-border-radius: 0.4em;
-	border-radius: 0.4em;
+	border-radius: 0.4em; */
 	-webkit-background-clip: padding;
 	-moz-background-clip: padding;
 	background-clip: padding-box;
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #bbb),
-		color-stop(30%, #fff), color-stop(70%, #fff), color-stop(100%, #bbb));
-	background: -webkit-linear-gradient(top, #bbb 0%, #fff 30%, #fff 70%, #bbb 100%)
 }
 
 .x-picker-slot .x-scroll-view {
@@ -5734,17 +5718,14 @@ body.x-desktop {
 	height: 2.5em;
 	background-image: none;
 	background-color: rgba(13, 148, 242, 0.3);
-	background-image: -webkit-linear-gradient(top, rgba(85, 180, 246, 0.3),
+	/* background-image: -webkit-linear-gradient(top, rgba(85, 180, 246, 0.3),
 		rgba(37, 159, 244, 0.3) 3%, rgba(11, 133, 218, 0.3));
 	background-image: -moz-linear-gradient(top, rgba(85, 180, 246, 0.3),
 		rgba(37, 159, 244, 0.3) 3%, rgba(11, 133, 218, 0.3));
 	background-image: -o-linear-gradient(top, rgba(85, 180, 246, 0.3),
 		rgba(37, 159, 244, 0.3) 3%, rgba(11, 133, 218, 0.3));
 	background-image: -ms-linear-gradient(top, rgba(85, 180, 246, 0.3),
-		rgba(37, 159, 244, 0.3) 3%, rgba(11, 133, 218, 0.3));
-	-webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0.2em 0.2em;
-	-moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0.2em 0.2em;
-	box-shadow: rgba(0, 0, 0, 0.2) 0 0.2em 0.2em
+		rgba(37, 159, 244, 0.3) 3%, rgba(11, 133, 218, 0.3)); */
 }
 
 .x-use-titles .x-picker-bar {
@@ -5780,7 +5761,6 @@ body.x-desktop {
 .x-picker-slot .x-dataview-item {
 	height: 2.5em;
 	line-height: 2.5em;
-	font-weight: bold;
 	padding: 0 10px
 }
 
@@ -6354,4 +6334,35 @@ body.x-desktop {
 
 .x-grid .x-grid-summaryrow .x-grid-cell {
 	border-color: #C0C0C0
+}
+
+#ext-button-5 {
+	width:80px;
+}
+
+#ext-spinnerfield-1 {
+	margin-top:20px;
+	margin-bottom: 0.15em;
+	border-top-right-radius:0.8em;
+	-moz-border-radius-topright: 0.8em;	
+	-webkit-border-top-right-radius: 0.8em;	
+	border-top-left-radius:0.8em;
+	-moz-border-top-bottomleft: 0.8em;	
+	-webkit-border-top-left-radius: 0.8em;
+}
+
+#ext-button-2 {
+	border-bottom-right-radius:0.8em;
+	-moz-border-radius-bottomright: 0.8em;	
+	-webkit-border-bottom-right-radius: 0.8em;
+	border-bottom-left-radius:0.8em;
+	-moz-border-radius-bottomleft: 0.8em;	
+	-webkit-border-bottom-left-radius: 0.8em;
+}
+
+.x-button {
+	height: 45px!important;
+}
+
+
 }
