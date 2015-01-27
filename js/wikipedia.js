@@ -4,7 +4,7 @@ $(document).ready(function() {
 		var item =$('#wiki').val();
 		if(item==="") {
 			$('#wiki').addClass('highlighted');
-			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">Keine leere Suche erlaubt!</p>");
+			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">No empty searches allowed.!</p>");
 		}
 		else if(item.length>max_zeichen) {
 			$('#wiki').addClass('highlighted');
@@ -23,7 +23,7 @@ $(document).ready(function() {
 		var item =$('#wiki').val();
 		if(item==="") {
 			$('#wiki').addClass('highlighted');
-			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">Keine leere Suche erlaubt!</p>");
+			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">No empty searches allowed.!</p>");
 		}
 		else if(item.length>max_zeichen) {
 			$('#wiki').addClass('highlighted');
@@ -40,15 +40,15 @@ $(document).ready(function() {
 		var val = max_zeichen-$('#wiki').val().length;
 		if(val<0) {
 			$('#wiki').addClass('highlighted');
-			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">Ihre Sucheingabe überschreitet die erlaubte Länge um: "+(val*-1)+ " Zeichen</p>");
+			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">Number of signs exceed the limit by "+(val*-1)+ " signs.</p>");
 		}
 		else if (val === max_zeichen) {
 			$('#wiki').addClass('highlighted');
-			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">Keine leere Suche erlaubt!</p>");		
+			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">No empty searches allowed.!</p>");		
 		}
 		else {
 			$('#wiki').removeClass('highlighted');
-			$('.checkInput').replaceWith("<p class=\"checkInput\">Noch erlaubte Zeichen: "+val+"</p>");
+			$('.checkInput').replaceWith("<p class=\"checkInput\">Signs left: "+val+"</p>");
 		}
 	});
 	$(document).on('click','.x',function() {
