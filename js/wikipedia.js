@@ -10,12 +10,12 @@ $(document).ready(function() {
 			$('#wiki').addClass('highlighted');
 		}
 		else{
+			addToList(url,item," (Artikel)");
 			function OpenInNewTab(url) {
 				  var win = window.open(url, '_blank');
 				  win.focus();
 				};
 			var url ="http://de.wikipedia.org/wiki/Spezial:Suche?search="+item+"&go=Artikel";
-			addToList(url,item," (Artikel)");
 			OpenInNewTab(url);
 		}
 	});
@@ -29,9 +29,8 @@ $(document).ready(function() {
 			$('#wiki').addClass('highlighted');
 		}
 		else{
-			
-			var url = "http://de.wikipedia.org/wiki/Spezial:Suche?search="+item+"&fulltext=Volltext";
 			addToList(url,item," (Volltext)");
+			var url = "http://de.wikipedia.org/wiki/Spezial:Suche?search="+item+"&fulltext=Volltext";
 			OpenInNewTab(url);
 		}
 	});
@@ -61,7 +60,7 @@ $(document).ready(function() {
 	})
 	
 	function addToList(url,item,message) {
-		$('.liste').append("<li class=\"listitem\"> <a class=\"link\" href=\""+url+"\">"+item+"</a>"+message+"<span class=\"x\">remove</span> </li>");
+		$('.liste').append("<li class=\"listitem\"> <a class=\"link\" href=\""+url+"\">"+item+"</a>"+message+"<span class=\"x btn btn-danger\">remove</span> </li>");
 	}
 	function OpenInNewTab(url) {
 		  var win = window.open(url, '_blank');
