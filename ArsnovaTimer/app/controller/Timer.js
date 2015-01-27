@@ -16,8 +16,8 @@ Ext.define("ArsnovaTimer.controller.Timer",{
         },
     },
     
-    controlTimer: function(action,min) {
-    	var startBtn =this.getStartBtn();
+    countdown: function(action,min) {
+    	var startBtn = this.getStartBtn();
     	var buzzer = this.getBuzzer();
         var cmd = action,
             offset;
@@ -73,11 +73,11 @@ Ext.define("ArsnovaTimer.controller.Timer",{
         }
  
         if(cmd==="Start") {
-        	var thisScope = this;
+        	var thisTimer = this;
         	offset = Date.now();
         	if ( self.timerInt != undefined ) { clearInterval(self.timerInt); }
         	timerInt = setInterval(function() {
-        		update(thisScope.getTimerPanel());
+        		update(thisTimer.getTimerPanel());
         	}, 1);
         };
         if(cmd==="Stop"){
@@ -105,6 +105,6 @@ Ext.define("ArsnovaTimer.controller.Timer",{
         	this.getTimerPanel().setHtml(mindisplay+":00:000 min");
         };
         
-        } //controlTimer
+        } //countdown
  
     });

@@ -11,7 +11,7 @@ Ext.define('ArsnovaTimer.view.Home', {
         styleHtmlContent: true,
         styleHtmlCls: 'homepage',
 
-        html: ['<h1> Timer for Arsnova</h1>',
+        html: ['<h1> Countdown Timer for Arsnova</h1>',
                 '<hr>',
         '<p> Press <a href="../index.html">here</a> to get back to the Homepage! </p>'].join(""),
         items: [

@@ -2,8 +2,11 @@ Ext.define('ArsnovaTimer.view.Timer', {
     extend: 'Ext.Panel',
     xtype: 'timer',
     id:'Timer',
+    initialize: function() {
+    	ArsnovaTimer.app.getController("Timer").countdown("Set",10);
+    },
     config: {
-        title: 'Timer',
+        title: 'Countdown Timer',
         iconCls: 'time',
         layout: 'fit',
         styleHtmlContent:true,
@@ -36,6 +39,9 @@ Ext.define('ArsnovaTimer.view.Timer', {
 	        	url:'../../ArsnovaTimer/resources/WrongAnswerBuzzer.mp3',
 	        	itemId:'buzzer',
 	        },
+	        {
+	        	
+	        }
 		    ],
 		    
     },

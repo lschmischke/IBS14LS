@@ -38,9 +38,13 @@
     cursor:pointer;
 }
 
+#wiki {
+	margin-right:10px;
+}
+
 #w3c {
 	padding-top:10px;
-}
+} 	
 
 .wrong {
 	color:red;

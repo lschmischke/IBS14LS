@@ -11,19 +11,19 @@ Ext.define('ArsnovaTimer.controller.TimerButton', {
             'button[action=timerButton]':{
             	tap:function(button){
             		if (button.getText()=== "Start") {
-            			ArsnovaTimer.app.getController("Timer").controlTimer("Start");
+            			ArsnovaTimer.app.getController("Timer").countdown("Start");
             			button.setText("Pause");
             		}
             		else {
             			button.setText("Start");
-            			ArsnovaTimer.app.getController("Timer").controlTimer("Stop");
+            			ArsnovaTimer.app.getController("Timer").countdown("Stop");
             		}
             	}
             },
             'button[action=resetButton]': {
             	tap:function(button){
             		this.getStartBtn().setText("Start");
-            		ArsnovaTimer.app.getController("Timer").controlTimer("Reset");
+            		ArsnovaTimer.app.getController("Timer").countdown("Reset");
             	}
             },
             'button[action=setTime]':{
@@ -43,7 +43,7 @@ Ext.define('ArsnovaTimer.controller.TimerButton', {
      	                  listeners: {
      	                     change: function(picker, value, eOpts) {
      	                         button.setText("Time: "+value.setTime+" Minute(s)");
-     	                         ArsnovaTimer.app.getController("Timer").controlTimer("Set",value.setTime);
+     	                         ArsnovaTimer.app.getController("Timer").countdown("Set",value.setTime);
      	                         startBtn.setText("Start");
      	                     }
      	                 }
