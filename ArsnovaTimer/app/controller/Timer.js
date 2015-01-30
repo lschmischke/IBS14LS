@@ -33,7 +33,7 @@ Ext.define("ArsnovaTimer.controller.Timer",{
         	if(clock<0) {
         		clearInterval(timerInt);
                 timerInt = undefined;
-                panel.setHtml("00:00");
+                panel.setHtml("00:00 <br><p> Die Zeit ist abgelaufen</p>");
                 startBtn.setText("Start");
                 clock=start;
                 buzzer.toggle();
