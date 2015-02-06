@@ -2,26 +2,24 @@ $(document).ready(function() {
 	var max_zeichen=90;
 	$("#artikel").click(function() {
 		var item =$('#wiki').val();
-		if(item==="") {
+		if(!/\S/.test(item)){
 			$('#wiki').addClass('highlighted');
 			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">No empty searches allowed!</p>");
+			$('#artikel').removeClass('btn-default');
+			$('#artikel').addClass('btn-danger');
 		}
 		else if(item.length>max_zeichen) {
 			$('#wiki').addClass('highlighted');
 		}
 		else{
-			addToList(url,item," (Artikel)");
-			function OpenInNewTab(url) {
-				  var win = window.open(url, '_blank');
-				  win.focus();
-				};
-			var url ="http://de.wikipedia.org/wiki/Spezial:Suche?search="+item+"&go=Artikel";
+			addToList(url,item," (Volltext)");
+			var url = "http://de.wikipedia.org/wiki/Spezial:Suche?search="+item+"&fulltext=Volltext";
 			OpenInNewTab(url);
 		}
 	});
 	$("#volltext").click(function() {
 		var item =$('#wiki').val();
-		if(item==="") {
+		if(!/\S/.test(item)) {
 			$('#wiki').addClass('highlighted');
 			$('.checkInput').replaceWith("<p class=\"checkInput wrong\">No empty searches allowed!</p>");
 			$('#volltext').removeClass('btn-default');
@@ -30,6 +28,7 @@ $(document).ready(function() {
 		else if(item.length>max_zeichen) {
 			$('#wiki').addClass('highlighted');
 		}
+		
 		else{
 			addToList(url,item," (Volltext)");
 			var url = "http://de.wikipedia.org/wiki/Spezial:Suche?search="+item+"&fulltext=Volltext";
@@ -80,5 +79,6 @@ $(document).ready(function() {
 		  var win = window.open(url, '_blank');
 		  win.focus();
 	};
+	
 	
 })

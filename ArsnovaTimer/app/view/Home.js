@@ -11,13 +11,15 @@ Ext.define('ArsnovaTimer.view.Home', {
         styleHtmlContent: true,
         styleHtmlCls: 'homepage',
 
-        html: ['<h1> Countdown Timer for Arsnova</h1>',
-                '<hr>',
-        '<p> Press <a href="../index.html">here</a> to get back to the Homepage! </p>'].join(""),
+        html: ['<br>',     
+        '<p class=\"arsnova-logo\"> Created for <a href="https://arsnova.eu/mobile"><span class=\"icon-ars\">ARS</span><span class=\"icon-nova\">nova</span></a></p>',
+        '<br>',
+        '<p><a href="../index.html">Get back to the Homepage!</a></p>',
+               ].join(""),
         items: [
             {
                 xtype: 'titlebar',
-                title: 'Welcome',
+                title: 'Countdown Timer',
                 docked:'top',
             }
         ]

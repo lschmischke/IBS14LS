@@ -15,7 +15,7 @@ Ext.define('ArsnovaTimer.view.Impressum', {
 	        	title:'Impressum',
 	        },
 	        {
-	        	html:["<p>Angaben gemäß § 5 TMG</p>",
+	        	html:["<br><p>Angaben gemäß § 5 TMG</p>",
 				"<p>Leonard Schmischke</p>",
 				"<p>Jacksonstraße 7 <br>35394 Gießen</p>",
 				"<p><div class=\"heading\">Vertreten durch:</div>",
